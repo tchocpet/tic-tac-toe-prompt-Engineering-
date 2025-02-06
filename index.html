@@ -3,9 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <div id="modeSelection">
+      <h2>Wähle einen Spielmodus:</h2>
+      <button onclick="startGame('player')">Spieler vs. Spieler</button>
+      <button onclick="startGame('computer')">Spieler vs. Computer</button>
+    </div>
+    <div id="content"></div>
+    <div id="scoreboard">
+      <p>Spieler Circle: <span id="circleScore">0</span></p>
+      <p>Spieler Cross: <span id="crossScore">0</span></p>
+    </div>
+    <button id="restartButton" onclick="restartGame()">Neustart</button>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal">
+      <div class="modal-content">
+        <h2 id="gameOverMessage"></h2>
+        <button onclick="closeModal()">Schließen</button>
+      </div>
+    </div>
+
+    <!-- Soundeffekte -->
+    <audio id="clickSound" src="click.mp3"></audio>
+    <audio id="winSound" src="win.mp3"></audio>
+    <audio id="drawSound" src="draw.mp3"></audio>
+  </body>
 </html>
